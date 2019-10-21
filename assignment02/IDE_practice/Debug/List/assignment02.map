@@ -1,0 +1,186 @@
+###############################################################################
+#
+# IAR ELF Linker V8.40.1.212/W32 for ARM                  20/Oct/2019  18:15:02
+# Copyright 2007-2019 IAR Systems AB.
+#
+#    Output file  =
+#        C:\repos\embsys100\assignment02\IDE_practice\Debug\Exe\assignment02.out
+#    Map file     =
+#        C:\repos\embsys100\assignment02\IDE_practice\Debug\List\assignment02.map
+#    Command line =
+#        -f C:\Users\nicef\AppData\Local\Temp\EWBD31.tmp
+#        (C:\repos\embsys100\assignment02\IDE_practice\Debug\Obj\main.o
+#        --no_out_extension -o
+#        C:\repos\embsys100\assignment02\IDE_practice\Debug\Exe\assignment02.out
+#        --redirect _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb
+#        --map
+#        C:\repos\embsys100\assignment02\IDE_practice\Debug\List\assignment02.map
+#        --config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.3\arm\config\linker\ST\stm32f401xE.icf" --semihosting --entry
+#        __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because some modules are built with
+size limitations (and not runtime checking), and --advanced_heap
+was not specified.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at address 0x800'0000 { ro section .intvec };
+"P1":  place in [from 0x800'0000 to 0x807'ffff] { ro };
+define block CSTACK with size = 8K, alignment = 8 { };
+define block HEAP with size = 8K, alignment = 8 { };
+"P2":  place in [from 0x2000'0000 to 0x2001'7fff] {
+          rw, block CSTACK, block HEAP };
+
+  Section          Kind         Address    Size  Object
+  -------          ----         -------    ----  ------
+"A0":                                      0x40
+  .intvec          ro code   0x800'0000    0x40  vector_table_M.o [3]
+                           - 0x800'0040    0x40
+
+"P1":                                     0x10c
+  .text            ro code   0x800'0040    0x46  main.o [1]
+  .text            ro code   0x800'0086    0x3a  zero_init3.o [3]
+  .text            ro code   0x800'00c0    0x28  data_init.o [3]
+  .iar.init_table  const     0x800'00e8    0x10  - Linker created -
+  .text            ro code   0x800'00f8    0x1e  cmain.o [3]
+  .text            ro code   0x800'0116     0x4  low_level_init.o [2]
+  .text            ro code   0x800'011a     0x4  exit.o [2]
+  .text            ro code   0x800'011e     0x2  vector_table_M.o [3]
+  .text            ro code   0x800'0120     0xa  cexit.o [3]
+  .text            ro code   0x800'012c    0x14  exit.o [4]
+  .text            ro code   0x800'0140     0xc  cstartup_M.o [3]
+  .rodata          const     0x800'014c     0x0  zero_init3.o [3]
+                           - 0x800'014c   0x10c
+
+"P2", part 1 of 2:                          0x4
+  .bss             zero     0x2000'0000     0x4  main.o [1]
+                          - 0x2000'0004     0x4
+
+"P2", part 2 of 2:                       0x2000
+  CSTACK                    0x2000'0008  0x2000  <Block>
+    CSTACK         uninit   0x2000'0008  0x2000  <Block tail>
+                          - 0x2000'2008  0x2000
+
+Unused ranges:
+
+         From           To      Size
+         ----           --      ----
+   0x800'014c   0x807'ffff  0x7'feb4
+  0x2000'0004  0x2000'0007       0x4
+  0x2000'2008  0x2001'7fff  0x1'5ff8
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x4:
+          0x2000'0000   0x4
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module            ro code  ro data  rw data
+    ------            -------  -------  -------
+command line/config:
+    -------------------------------------------
+    Total:
+
+C:\repos\embsys100\assignment02\IDE_practice\Debug\Obj: [1]
+    main.o                 70                 4
+    -------------------------------------------
+    Total:                 70                 4
+
+dl7M_tln.a: [2]
+    exit.o                  4
+    low_level_init.o        4
+    -------------------------------------------
+    Total:                  8
+
+rt7M_tl.a: [3]
+    cexit.o                10
+    cmain.o                30
+    cstartup_M.o           12
+    data_init.o            40
+    vector_table_M.o       66
+    zero_init3.o           58
+    -------------------------------------------
+    Total:                216
+
+shb_l.a: [4]
+    exit.o                 20
+    -------------------------------------------
+    Total:                 20
+
+    Gaps                    2
+    Linker created                  16    8'192
+-----------------------------------------------
+    Grand Total:          316       16    8'196
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address  Size  Type      Object
+-----                       -------  ----  ----      ------
+.iar.init_table$$Base    0x800'00e8         --   Gb  - Linker created -
+.iar.init_table$$Limit   0x800'00f8         --   Gb  - Linker created -
+?main                    0x800'00f9        Code  Gb  cmain.o [3]
+CSTACK$$Base            0x2000'0008         --   Gb  - Linker created -
+CSTACK$$Limit           0x2000'2008         --   Gb  - Linker created -
+Region$$Table$$Base      0x800'00e8         --   Gb  - Linker created -
+Region$$Table$$Limit     0x800'00f8         --   Gb  - Linker created -
+__cmain                  0x800'00f9        Code  Gb  cmain.o [3]
+__exit                   0x800'012d  0x14  Code  Gb  exit.o [4]
+__iar_data_init3         0x800'00c1  0x28  Code  Gb  data_init.o [3]
+__iar_program_start      0x800'0141        Code  Gb  cstartup_M.o [3]
+__iar_zero_init3         0x800'0087  0x3a  Code  Gb  zero_init3.o [3]
+__low_level_init         0x800'0117   0x4  Code  Gb  low_level_init.o [2]
+__vector_table           0x800'0000        Data  Gb  vector_table_M.o [3]
+_call_main               0x800'0105        Code  Gb  cmain.o [3]
+_exit                    0x800'0121        Code  Gb  cexit.o [3]
+_main                    0x800'0113        Code  Gb  cmain.o [3]
+exit                     0x800'011b   0x4  Code  Gb  exit.o [2]
+globalCounter           0x2000'0000   0x4  Data  Gb  main.o [1]
+main                     0x800'0079   0xe  Code  Gb  main.o [1]
+noPointers               0x800'0041  0x10  Code  Gb  main.o [1]
+withPointers             0x800'0051  0x22  Code  Gb  main.o [1]
+
+
+[1] = C:\repos\embsys100\assignment02\IDE_practice\Debug\Obj
+[2] = dl7M_tln.a
+[3] = rt7M_tl.a
+[4] = shb_l.a
+
+    316 bytes of readonly  code memory
+     16 bytes of readonly  data memory
+  8'196 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

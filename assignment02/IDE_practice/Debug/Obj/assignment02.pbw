@@ -1,0 +1,86 @@
+[
+  {
+    "ID": "c:@globalCounter",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "globalCounter",
+    "location": {
+      "column": "5",
+      "line": "1",
+      "path": "C:\\repos\\embsys100\\assignment02\\IDE_practice\\main.c"
+    },
+    "name": "globalCounter",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@noPointers",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "int noPointers(void)",
+    "location": {
+      "column": "5",
+      "line": "3",
+      "path": "C:\\repos\\embsys100\\assignment02\\IDE_practice\\main.c"
+    },
+    "name": "noPointers",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.c@50@F@noPointers@counter",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "counter",
+    "location": {
+      "column": "16",
+      "line": "4",
+      "path": "C:\\repos\\embsys100\\assignment02\\IDE_practice\\main.c"
+    },
+    "name": "counter",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@withPointers",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "int withPointers(void)",
+    "location": {
+      "column": "5",
+      "line": "12",
+      "path": "C:\\repos\\embsys100\\assignment02\\IDE_practice\\main.c"
+    },
+    "name": "withPointers",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.c@184@F@withPointers@p_int",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "p_int",
+    "location": {
+      "column": "8",
+      "line": "13",
+      "path": "C:\\repos\\embsys100\\assignment02\\IDE_practice\\main.c"
+    },
+    "name": "p_int",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@main",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "int main(void)",
+    "location": {
+      "column": "5",
+      "line": "21",
+      "path": "C:\\repos\\embsys100\\assignment02\\IDE_practice\\main.c"
+    },
+    "name": "main",
+    "origin": "project_file",
+    "scope": null
+  }
+]
