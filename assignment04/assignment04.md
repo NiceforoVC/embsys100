@@ -15,6 +15,8 @@ design, API, testing…etc.)
 
 ***a. Convert the Blinking Led demo to use the corresponding bit-band address instead of the register address used in the peripheral region.***
 
+Code written in **main_LED_bit_banding.c**:
+
 ```c
 #define RCC_BASE 0x40023800
 #define RCC_AHB1ENR (*((unsigned int*)(RCC_BASE + 0x30)))
@@ -123,8 +125,54 @@ vii. Provide a function that returns 1 if stack is full.
 
 ### 4. Bonus: Using the power of pointers and type casting, create a function that can determine if a computer is big-endian or little-endian. Test your function in the simulator and modify the Project Options (as shown in the figure below) against:
 
+![Image of main options](https://github.com/NiceforoVC/embsys100/blob/master/assignment04/Main_options.png)
+
+Code written in **main_Endianness.c**:
+```c
+#include <assert.h>
+
+unsigned int global = 0x01234567;
+
+int checkEndianness(void);
+
+int main()
+{
+  int result;
+  
+  result = checkEndianness();
+  
+  assert(1 == result); // Fail if little endian
+  assert(2 == result); // Fail if big endian
+  
+  return 0;
+}
+
+int checkEndianness()
+{
+  int endianness = 0;
+
+  // Get first byte
+  unsigned char first = *((unsigned char*)(&global));
+  
+  // Big endian (MSB first)
+  if (first == 0x01)
+    endianness = 1;
+  // Little endian (LSB first)
+  if (first == 0x67)
+    endianness = 2;
+  
+  return endianness;
+}
+```
+
 ***a. Device STM32F401RE***
+
+Result: Little Endian
 
 ***b. Cortex M4 (Little endian option)***
 
+Result: Little Endian
+
 ***c. Cortex M4 (Big Endian option)***
+
+Result: Big Endian
