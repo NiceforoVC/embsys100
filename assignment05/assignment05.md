@@ -232,7 +232,7 @@ equal
 
 Screen output of **swapCharsAsm** execution:
 
-![Image of swapChars](https://github.com/NiceforoVC/embsys100/blob/master/assignment05/swapChars.png)
+![Image of swapChars](https://github.com/NiceforoVC/embsys100/blob/master/assignment05/SwapChars.png)
 
 ### 5. Bonus: Implement the swap_pointer() function from #1 above in assembly and call it swapPointersAsm().
 
