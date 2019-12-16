@@ -1,0 +1,42 @@
+Configuration	LED PWM Example
+STM32CubeMX 	4.27.0
+Date	12/11/2019
+MCU	STM32F401RETx
+
+
+
+PERIPHERALS	MODES	FUNCTIONS	PINS
+SYS	SysTick	SYS_VS_Systick	VP_SYS_VS_Systick
+TIM2	PWM Generation CH1	TIM2_CH1	PA5
+
+
+
+Pin Nb	PINs	FUNCTIONs	LABELs
+21	PA5	TIM2_CH1	
+
+
+
+SOFTWARE PROJECT
+
+Project Settings : 
+Project Name : LED PWM Example
+Project Folder : C:\Users\nicef\OneDrive\Documents\Personal\Schools\Niceforo\UW Certificate in Embedded\EMBSYS 100 B\M09\A08\LED PWM\LED PWM Example
+Toolchain / IDE : EWARM V8
+Firmware Package Name and Version : STM32Cube FW_F4 V1.21.0
+
+
+Code Generation Settings : 
+STM32Cube Firmware Library Package : Copy all used libraries into the project folder
+Generate peripheral initialization as a pair of '.c/.h' files per peripheral : No
+Backup previously generated files when re-generating : No
+Delete previously generated files when not re-generated : Yes
+Set all free pins as analog (to optimize the power consumption) : No
+
+
+Toolchains Settings : 
+Compiler Optimizations : 
+
+
+
+
+
